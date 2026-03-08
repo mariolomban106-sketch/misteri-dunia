@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak — Misteri Dunia</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .form-kontak {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .form-kontak h2 {
+      font-size: 1.6rem;
+      color: #1a1a2e;
+      border-left: 4px solid #c9a84c;
+      padding-left: 12px;
+      margin-bottom: 28px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #1a1a2e;
+      font-size: 0.95rem;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-family: Georgia, serif;
+      background: white;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #1a1a2e;
+    }
+    .form-group textarea {
+      height: 130px;
+      resize: vertical;
+    }
+    .btn-kirim {
+      background-color: #1a1a2e;
+      color: white;
+      border: none;
+      padding: 12px 36px;
+      font-size: 1rem;
+      font-family: Georgia, serif;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .btn-kirim:hover {
+      background-color: #c9a84c;
+      color: #1a1a2e;
+    }
+    .pesan-sukses {
+      display: none;
+      background-color: #e8f5e9;
+      border: 1px solid #4caf50;
+      padding: 14px 18px;
+      border-radius: 4px;
+      color: #2e7d32;
+      margin-top: 16px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+  <img src="../images/logo-misteri-dunia.svg" alt="Logo Misteri Dunia" height="50"/>
+    <nav>
+      <a href="../index.html">Beranda</a>
+      <a href="misteri.html">Misteri</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+  </header>
+
+  <section class="hero" style="padding: 50px 20px;">
+    <h1>Kontak</h1>
+    <p>Punya laporan misteri atau pertanyaan? Hubungi kami!</p>
+  </section>
+
+  <div class="form-kontak">
+    <h2>Kirim Pesan</h2>
+
+    <div class="form-group">
+      <label for="nama">Nama Lengkap *</label>
+      <input type="text" id="nama" placeholder="Masukkan nama kamu"/>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input type="email" id="email" placeholder="contoh@email.com"/>
+    </div>
+
+    <div class="form-group">
+      <label for="topik">Topik</label>
+      <select id="topik">
+        <option value="">— Pilih Topik —</option>
+        <option>Laporan Misteri Baru</option>
+        <option>UFO & Alien</option>
+        <option>Arkeologi</option>
+        <option>Supernatural</option>
+        <option>Lainnya</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="pesan">Pesan *</label>
+      <textarea id="pesan" placeholder="Tulis pesanmu di sini..."></textarea>
+    </div>
+
+    <button class="btn-kirim" onclick="kirimPesan()">Kirim Pesan</button>
+
+    <div class="pesan-sukses" id="pesan-sukses">
+      ✅ Pesan berhasil dikirim! Terima kasih sudah menghubungi kami.
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Misteri Dunia</p>
+  </footer>
+
+  <script>
+    function kirimPesan() {
+      var nama = document.getElementById('nama').value;
+      var email = document.getElementById('email').value;
+      var pesan = document.getElementById('pesan').value;
+
+      if (nama === '' || email === '' || pesan === '') {
+        alert('Mohon isi semua field yang wajib diisi (*).');
+        return;
+      }
+
+      document.getElementById('pesan-sukses').style.display = 'block';
+      document.getElementById('nama').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('pesan').value = '';
+    }
+  </script>
+
+</body>
+</html>

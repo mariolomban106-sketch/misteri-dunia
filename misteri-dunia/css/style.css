@@ -1,0 +1,149 @@
+/* ================================
+   Misteri Dunia — CSS Sederhana
+   ================================ */
+
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  background-color: #f5f0e8;
+  color: #2c2c2c;
+}
+
+/* ---- HEADER ---- */
+header {
+  background-color: #1a1a2e;
+  color: white;
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 24px;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: #c9a84c;
+}
+
+/* ---- HERO ---- */
+.hero {
+  background-color: #1a1a2e;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  border-bottom: 4px solid #c9a84c;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 28px;
+}
+
+.tombol {
+  display: inline-block;
+  padding: 12px 32px;
+  background-color: #c9a84c;
+  color: #1a1a2e;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.tombol:hover {
+  background-color: #e8cc7a;
+}
+
+/* ---- GAMBAR UTAMA ---- */
+.gambar-utama {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.gambar-utama img {
+  width: 100%;
+  max-width: 700px;
+  height: 300px;
+  object-fit: cover;
+  border: 3px solid #1a1a2e;
+  display: block;
+  margin: 0 auto 12px;
+}
+
+/* Placeholder jika gambar belum ada */
+.gambar-utama img[src="images/piramida.jpg"]:not([complete]) {
+  background: #ddd;
+}
+
+.gambar-utama p {
+  font-style: italic;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ---- ARTIKEL / KARTU ---- */
+.artikel {
+  max-width: 860px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.artikel h2 {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  color: #1a1a2e;
+  border-left: 4px solid #c9a84c;
+  padding-left: 12px;
+}
+
+.kartu {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-left: 4px solid #1a1a2e;
+  padding: 24px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.kartu h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #1a1a2e;
+}
+
+.kartu p {
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ---- FOOTER ---- */
+footer {
+  background-color: #1a1a2e;
+  color: #aaa;
+  text-align: center;
+  padding: 24px;
+  font-size: 0.85rem;
+  margin-top: 60px;
+}

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Misteri Dunia</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ---- SLIDESHOW ---- */
+    .slideshow {
+      position: relative;
+      max-width: 700px;
+      margin: 40px auto 0;
+      padding: 0 20px;
+    }
+
+    .slide {
+      display: none;
+      animation: fadeSlide 0.8s ease;
+    }
+
+    .slide.aktif {
+      display: block;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: scale(0.98); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .slide img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border: 3px solid #1e90ff;
+      display: block;
+    }
+
+    .slide .img-placeholder {
+      width: 100%;
+      height: 320px;
+      background: linear-gradient(135deg, #0a1f3a, #1a3a5c);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid #1e90ff;
+      font-size: 4rem;
+      gap: 12px;
+    }
+
+    .slide .img-placeholder p {
+      font-size: 1rem;
+      color: #a0b8d0;
+      font-style: italic;
+    }
+
+    .slide-caption {
+      background-color: #0d1b2e;
+      border: 1px solid #1a3a5c;
+      border-top: none;
+      padding: 12px 20px;
+      font-style: italic;
+      color: #a0b8d0;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* Tombol panah */
+    .slide-prev,
+    .slide-next {
+      position: absolute;
+      top: 42%;
+      transform: translateY(-50%);
+      background-color: rgba(30, 144, 255, 0.85);
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      z-index: 10;
+    }
+
+    .slide-prev { left: 24px; }
+    .slide-next { right: 24px; }
+
+    .slide-prev:hover,
+    .slide-next:hover {
+      background-color: #1e90ff;
+    }
+
+    /* Titik indikator */
+    .slide-dots {
+      text-align: center;
+      padding: 14px 0 30px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #1a3a5c;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      border: 1px solid #1e90ff;
+    }
+
+    .dot.aktif {
+      background-color: #1e90ff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="images/logo-misteri-dunia.svg" alt="Logo Misteri Dunia"/>
+      Misteri Dunia
+    </div>
+    <nav>
+      <a href="index.html" class="aktif">Beranda</a>
+      <a href="pages/misteri.html">Misteri</a>
+      <a href="pages/galeri.html">Galeri</a>
+      <a href="pages/portfolio.html">Portfolio</a>
+      <a href="pages/kontak.html">Kontak</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Selamat Datang di Misteri Dunia</h1>
+    <p>Menjelajahi rahasia dan enigma terbesar yang belum terpecahkan oleh manusia.</p>
+    <a href="pages/misteri.html" class="tombol">Lihat Misteri</a>
+  </section>
+
+  <!-- SLIDESHOW -->
+  <div class="slideshow">
+    <button class="slide-prev" onclick="gantiSlide(-1)">&#8592;</button>
+    <button class="slide-next" onclick="gantiSlide(1)">&#8594;</button>
+
+    <div class="slide aktif">
+      <img src="images/piramida.jpg" alt="Piramida Giza"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+      <div class="img-placeholder" style="display:none"><span>🔺</span><p>Piramida Agung Giza</p></div>
+      <div class="slide-caption">🔺 Piramida Agung Giza, Mesir — Dibangun sekitar 2560 SM</div>
+    </div>
+
+    <div class="slide">
+      <img src="images/stonehenge.jpg" alt="Stonehenge"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+      <div class="img-placeholder" style="display:none"><span>🗿</span><p>Stonehenge, Inggris</p></div>
+      <div class="slide-caption">🗿 Stonehenge, Inggris — Lingkaran batu berusia 5.000 tahun</div>
+    </div>
+
+    <div class="slide">
+      <img src="images/bermuda.jpg" alt="Segitiga Bermuda"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+      <div class="img-placeholder" style="display:none"><span>🌊</span><p>Segitiga Bermuda</p></div>
+      <div class="slide-caption">🌊 Segitiga Bermuda, Atlantik — Zona misterius yang menelan kapal & pesawat</div>
+    </div>
+
+    <div class="slide">
+      <img src="images/ufo.jpg" alt="UFO"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+      <div class="img-placeholder" style="display:none"><span>🛸</span><p>Penampakan UFO</p></div>
+      <div class="slide-caption">🛸 Penampakan UFO — Fenomena yang belum bisa dijelaskan ilmu pengetahuan</div>
+    </div>
+
+    <div class="slide">
+      <img src="images/nazca.jpg" alt="Garis Nazca"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+      <div class="img-placeholder" style="display:none"><span>🌄</span><p>Garis Nazca, Peru</p></div>
+      <div class="slide-caption">🌄 Garis Nazca, Peru — Gambar raksasa yang hanya terlihat dari udara</div>
+    </div>
+
+    <div class="slide">
+      <img src="images/lochness.jpg" alt="Loch Ness"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+      <div class="img-placeholder" style="display:none"><span>🦕</span><p>Monster Loch Ness</p></div>
+      <div class="slide-caption">🦕 Monster Loch Ness, Skotlandia — Makhluk misterius di kedalaman danau</div>
+    </div>
+
+    <div class="slide">
+      <img src="images/bigfoot.jpg" alt="Bigfoot"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+      <div class="img-placeholder" style="display:none"><span>🦶</span><p>Bigfoot, Amerika Utara</p></div>
+      <div class="slide-caption">🦶 Bigfoot (Sasquatch), Amerika Utara — Makhluk misterius setinggi 2-3 meter</div>
+    </div>
+
+    <div class="slide">
+      <img src="images/marycelesite.jpg" alt="Kapal Mary Celeste"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+      <div class="img-placeholder" style="display:none"><span>🚢</span><p>Kapal Mary Celeste</p></div>
+      <div class="slide-caption">🚢 Kapal Mary Celeste, Atlantik — Kapal tanpa awak yang ditemukan tahun 1872</div>
+    </div>
+
+    <div class="slide">
+      <img src="images/atlantis.jpg" alt="Atlantis"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+      <div class="img-placeholder" style="display:none"><span>🌍</span><p>Atlantis — Benua yang Hilang</p></div>
+      <div class="slide-caption">🌍 Atlantis — Peradaban maju yang diklaim tenggelam dalam sehari semalam</div>
+    </div>
+
+  </div>
+
+  <!-- Titik indikator -->
+  <div class="slide-dots">
+    <span class="dot aktif" onclick="keSlide(0)"></span>
+    <span class="dot" onclick="keSlide(1)"></span>
+    <span class="dot" onclick="keSlide(2)"></span>
+    <span class="dot" onclick="keSlide(3)"></span>
+    <span class="dot" onclick="keSlide(4)"></span>
+    <span class="dot" onclick="keSlide(5)"></span>
+    <span class="dot" onclick="keSlide(6)"></span>
+    <span class="dot" onclick="keSlide(7)"></span>
+    <span class="dot" onclick="keSlide(8)"></span>
+  </div>
+
+  <!-- KARTU MISTERI -->
+  <section class="artikel">
+    <h2 class="section-judul">Misteri Pilihan</h2>
+    <div class="kartu-grid">
+
+      <div class="kartu">
+        <h3>🔺 Piramida Agung Giza</h3>
+        <p>Dibangun sekitar 2560 SM dengan presisi luar biasa. Bagaimana manusia purba bisa membangunnya tanpa teknologi modern?</p>
+      </div>
+
+      <div class="kartu">
+        <h3>🌊 Segitiga Bermuda</h3>
+        <p>Wilayah di Samudra Atlantik yang telah "menelan" puluhan kapal dan pesawat tanpa jejak hingga kini.</p>
+      </div>
+
+      <div class="kartu">
+        <h3>🗿 Stonehenge</h3>
+        <p>Lingkaran batu raksasa berusia 5.000 tahun di Inggris yang tujuan pembangunannya masih jadi tanda tanya.</p>
+      </div>
+
+      <div class="kartu">
+        <h3>👽 Roswell 1947</h3>
+        <p>Objek tak dikenal jatuh di New Mexico. Militer AS mengklaim balon cuaca, tapi saksi mata berkata lain.</p>
+      </div>
+
+      <div class="kartu">
+        <h3>👻 Kapal Mary Celeste</h3>
+        <p>Kapal ditemukan melayang tanpa awak di Atlantik. Semua penumpang menghilang tanpa jejak dan penjelasan.</p>
+      </div>
+
+      <div class="kartu">
+        <h3>🌍 Atlantis</h3>
+        <p>Peradaban maju yang diklaim Plato tenggelam dalam sehari. Para peneliti masih mencarinya hingga kini.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Misteri Dunia</p>
+  </footer>
+
+  <script>
+    var slideSekarang = 0;
+    var slides = document.querySelectorAll('.slide');
+    var dots = document.querySelectorAll('.dot');
+    var otomatis;
+
+    function tampilSlide(n) {
+      slides.forEach(function(s) { s.classList.remove('aktif'); });
+      dots.forEach(function(d) { d.classList.remove('aktif'); });
+      slideSekarang = (n + slides.length) % slides.length;
+      slides[slideSekarang].classList.add('aktif');
+      dots[slideSekarang].classList.add('aktif');
+    }
+
+    function gantiSlide(arah) {
+      resetOtomatis();
+      tampilSlide(slideSekarang + arah);
+    }
+
+    function keSlide(n) {
+      resetOtomatis();
+      tampilSlide(n);
+    }
+
+    function resetOtomatis() {
+      clearInterval(otomatis);
+      otomatis = setInterval(function() {
+        tampilSlide(slideSekarang + 1);
+      }, 4000);
+    }
+
+    // Auto slide setiap 4 detik
+    otomatis = setInterval(function() {
+      tampilSlide(slideSekarang + 1);
+    }, 4000);
+  </script>
+
+</body>
+</html>

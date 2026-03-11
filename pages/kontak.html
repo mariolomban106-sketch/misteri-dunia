@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak — Misteri Dunia</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="../images/logo-misteri-dunia.svg" alt="Logo Misteri Dunia"/>
+      Misteri Dunia
+    </div>
+    <nav>
+      <a href="../index.html">Beranda</a>
+      <a href="misteri.html">Misteri</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="kontak.html" class="aktif">Kontak</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <h1>Kontak</h1>
+    <p>Punya laporan misteri atau pertanyaan? Hubungi kami!</p>
+  </section>
+
+  <div class="form-kontak">
+    <h2 class="section-judul">Kirim Pesan</h2>
+
+    <div class="form-group">
+      <label for="nama">Nama Lengkap *</label>
+      <input type="text" id="nama" placeholder="Masukkan nama kamu"/>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input type="email" id="email" placeholder="contoh@email.com"/>
+    </div>
+
+    <div class="form-group">
+      <label for="topik">Topik</label>
+      <select id="topik">
+        <option value="">— Pilih Topik —</option>
+        <option>Laporan Misteri Baru</option>
+        <option>UFO & Alien</option>
+        <option>Arkeologi</option>
+        <option>Supernatural</option>
+        <option>Lainnya</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="pesan">Pesan *</label>
+      <textarea id="pesan" placeholder="Tulis pesanmu di sini..."></textarea>
+    </div>
+
+    <button class="btn-kirim" onclick="kirimPesan()">Kirim Pesan</button>
+
+    <div class="pesan-sukses" id="pesan-sukses">
+      ✅ Pesan berhasil dikirim! Terima kasih sudah menghubungi kami.
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Misteri Dunia</p>
+  </footer>
+
+  <script>
+    function kirimPesan() {
+      var nama = document.getElementById('nama').value;
+      var email = document.getElementById('email').value;
+      var pesan = document.getElementById('pesan').value;
+      if (nama === '' || email === '' || pesan === '') {
+        alert('Mohon isi semua field yang wajib diisi (*).');
+        return;
+      }
+      document.getElementById('pesan-sukses').style.display = 'block';
+      document.getElementById('nama').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('pesan').value = '';
+    }
+  </script>
+
+</body>
+</html>
